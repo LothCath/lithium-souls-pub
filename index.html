@@ -27,10 +27,26 @@
   --font-h4: "Bebas Neue", sans-serif;
   --font-text: Arial, sans-serif;
 }
+
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: transparent; }
-body { padding: 20px 0; color: var(--colorfont); font-family: var(--font-text); }
-a { color: var(--colornews); text-decoration: none; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  padding: 18px 0;
+  color: var(--colorfont);
+  font-family: var(--font-text);
+}
+
+a {
+  color: var(--colornews);
+  text-decoration: none;
+}
+
 a:hover { color: var(--coloradd); }
 
 .lst_fpbg {
@@ -43,6 +59,7 @@ a:hover { color: var(--coloradd); }
   padding: 12px;
   border-radius: var(--mainradius);
 }
+
 .lst_fpin {
   padding: 20px;
   border-radius: var(--mainradius);
@@ -54,26 +71,34 @@ a:hover { color: var(--coloradd); }
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
-.lst_fphead { text-align: center; margin-bottom: 20px; }
+
+/* HEADER */
+.lst_fphead {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
 .lst_fpname {
   position: relative;
   display: inline-block;
   font: 36px var(--font-h2);
   text-transform: uppercase;
   padding: 10px 20px;
-  margin: 10px 0 20px auto;
+  margin: 8px 0 18px auto;
   background: linear-gradient(135deg, rgb(255 255 255 / .15), rgb(255 255 255 / .02));
   border-radius: 50px;
   border: 1px solid rgb(255 255 255 / .08);
   box-shadow: 0 10px 30px rgb(0 0 0 / .6), inset 0 1px 0 rgb(255 255 255 / .05);
   text-align: center;
 }
+
 .lst_fpname span {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .lst_fpnamequo {
   opacity: .7;
   letter-spacing: 2px;
@@ -81,14 +106,17 @@ a:hover { color: var(--coloradd); }
   padding: 0 0 10px 0;
   border-bottom: 1px solid var(--colornews);
 }
+
+/* ONGLETS */
 .lst_fptabs {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin: 20px 0 35px 0;
+  margin: 18px 0 22px 0;
   text-align: center;
   flex-wrap: wrap;
 }
+
 .lst_fptabind {
   position: relative;
   padding-left: 24px;
@@ -105,13 +133,20 @@ a:hover { color: var(--coloradd); }
   background: transparent;
   font-family: var(--font-text);
 }
-.lst_fptabind span { display: inline-block; transition: .3s; }
-.lst_fptabind:hover span, .lst_fptabind.active span {
+
+.lst_fptabind span {
+  display: inline-block;
+  transition: .3s;
+}
+
+.lst_fptabind:hover span,
+.lst_fptabind.active span {
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .lst_fptabind::after {
   content: "";
   position: absolute;
@@ -122,7 +157,12 @@ a:hover { color: var(--coloradd); }
   background: var(--gradient);
   transition: width .3s ease;
 }
-.lst_fptabind:hover::after, .lst_fptabind.active::after { width: calc(100% - 24px); }
+
+.lst_fptabind:hover::after,
+.lst_fptabind.active::after {
+  width: calc(100% - 24px);
+}
+
 .lst_fptabind::before {
   content: "";
   position: absolute;
@@ -140,51 +180,133 @@ a:hover { color: var(--coloradd); }
   mask-position: center;
   transition: .3s;
 }
-.lst_fptabind:hover::before, .lst_fptabind.active::before {
+
+.lst_fptabind:hover::before,
+.lst_fptabind.active::before {
   background-color: var(--colornews);
   transform: translateY(-50%) scale(1.1) rotate(6deg);
 }
+
 .lst_fptabind.active { opacity: 1; }
-.lst_fptabind[data-tab="1"]::before { -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/info.svg"); mask-image:url("https://unpkg.com/lucide-static/icons/info.svg");}
-.lst_fptabind[data-tab="2"]::before { -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/book-open.svg"); mask-image:url("https://unpkg.com/lucide-static/icons/book-open.svg");}
-.lst_fptabind[data-tab="3"]::before { -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/link.svg"); mask-image:url("https://unpkg.com/lucide-static/icons/link.svg");}
-.lst_fptabind[data-tab="4"]::before { -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/star.svg"); mask-image:url("https://unpkg.com/lucide-static/icons/star.svg");}
+
+.lst_fptabind[data-tab="1"]::before {
+  -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/info.svg");
+  mask-image:url("https://unpkg.com/lucide-static/icons/info.svg");
+}
+.lst_fptabind[data-tab="2"]::before {
+  -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/book-open.svg");
+  mask-image:url("https://unpkg.com/lucide-static/icons/book-open.svg");
+}
+.lst_fptabind[data-tab="3"]::before {
+  -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/link.svg");
+  mask-image:url("https://unpkg.com/lucide-static/icons/link.svg");
+}
+.lst_fptabind[data-tab="4"]::before {
+  -webkit-mask-image:url("https://unpkg.com/lucide-static/icons/star.svg");
+  mask-image:url("https://unpkg.com/lucide-static/icons/star.svg");
+}
+
+/* CONTENU */
+.lst_fpcontain { margin-top: 0; }
 
 .lst_fpcontent { display: none; }
+
 .lst_fpcontent.active { display: block; }
 
-.lst_fpimginfos, .ls-cont_img {
+.lst_fpimginfos,
+.ls-cont_img {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 18px 0 24px;
+  gap: 16px;
+  margin: 6px 0 22px;
   flex-wrap: wrap;
 }
-.lst_fpimginfos img, .ls-cont_img img, .lst_fpimgtab, .lst_fpbtsimg img {
+
+.lst_fpimginfos img,
+.ls-cont_img img,
+.lst_fpimgtab,
+.lst_fpbtsimg img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--coloradd);
+  outline: 1px solid rgba(255,255,255,.15);
+  outline-offset: 5px;
 }
-.lst_fptlegen, .lst_fptabottle, .lst_fpplayertle {
+
+.lst_fptlegen,
+.lst_fptabottle,
+.lst_fpplayertle {
   text-align: center;
   font: 20px var(--font-h2);
   text-transform: uppercase;
   letter-spacing: 4px;
   color: var(--colornews);
-  margin: 20px 0 15px;
+  margin: 10px 0 14px;
 }
-.lst_fpblockinfos, .lst_fpblocktab, .lst_fpblockplayer {
+
+/* LAYOUT INFOS : fidèle à la capture */
+.lst_infos_layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 18px;
+  align-items: start;
+}
+
+.lst_infos_left {
+  min-width: 0;
+}
+
+.lst_infos_right {
+  width: 270px;
+  text-align: center;
+  padding-top: 0;
+}
+
+.lst_fpblockinfos,
+.lst_fpblocktab,
+.lst_fpblockplayer {
   background: var(--color03);
   padding: 15px;
   border-left: 2px solid var(--bordercolor);
-  margin: 12px 0;
+  margin: 0 0 12px;
   border-radius: 4px;
 }
-.lst_fpinfoslist { display: flex; flex-direction: column; gap: 10px; }
-.lst_fbinfo { border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 8px; }
+
+.lst_fpblockinfos {
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--coloradd) transparent;
+}
+
+.lst_fpblockinfos::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lst_fpblockinfos::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lst_fpblockinfos::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--colornews), var(--coloradd));
+  border-radius: 10px;
+}
+
+.lst_fpinfoslist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lst_fbinfo {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding-bottom: 8px;
+}
+
 .lst_fbinfo:last-child { border-bottom: 0; }
+
 .lst_fbinfo span {
   display: block;
   font: 15px var(--font-h4);
@@ -193,33 +315,54 @@ a:hover { color: var(--coloradd); }
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-.lst_fbinfo p { margin: 0; font-size: 12px; line-height: 1.55; }
-.lst_fpavaquo {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: center;
-  margin: 25px 0;
-  flex-wrap: wrap;
+
+.lst_fbinfo p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--colorfont);
 }
+
+.lst_fpavaquo {
+  display: block;
+  margin: 0;
+}
+
 .lst_fpava {
-  width: 120px;
-  height: 120px;
+  width: 270px;
+  height: 445px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: var(--radiusbis);
+  border: 1px solid rgba(255,255,255,.18);
   outline: 1px solid var(--bordercolor);
   outline-offset: 8px;
+  display: block;
+  margin: 8px auto 24px;
 }
+
 .lst_fpquo {
   font: 14px var(--font-h4);
-  max-width: 360px;
+  width: 245px;
+  margin: 0 auto;
   border-left: 2px var(--coloradd) solid;
   padding-left: 10px;
   text-align: justify;
   color: var(--colorfont);
+  line-height: 1.45;
 }
-.lst_fpbtsimg { text-align: center; margin: 20px 0; }
-.lst_fpinfoplayer { font-size: 12px; line-height: 1.6; text-align: justify; }
+
+.lst_fpbtsimg {
+  text-align: center;
+  margin: 14px 0 8px;
+}
+
+.lst_fpinfoplayer {
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--colorfont);
+}
+
 .lst_fpinfoplayer > div {
   font: 15px var(--font-h4);
   color: var(--coloradd);
@@ -227,7 +370,12 @@ a:hover { color: var(--coloradd); }
   text-transform: uppercase;
   margin-bottom: 5px;
 }
-.ls-header { margin: 10px 0 25px; }
+
+/* CONTEXTE */
+.ls-header {
+  margin: 4px 0 18px;
+}
+
 .ls-header > div {
   font-family: var(--font-h3);
   font-size: 40px;
@@ -235,6 +383,7 @@ a:hover { color: var(--coloradd); }
   letter-spacing: 2px;
   color: var(--colorfont);
 }
+
 .ls-header > span {
   font-size: 10px;
   letter-spacing: 3px;
@@ -243,12 +392,14 @@ a:hover { color: var(--coloradd); }
   opacity: .5;
   color: var(--colorfont);
 }
+
 .ls-cont_text {
   font-size: 13px;
   line-height: 1.8;
   color: var(--colorfont);
   text-align: justify;
 }
+
 .ls-tab_content {
   background: var(--color03);
   padding: 12px;
@@ -257,7 +408,9 @@ a:hover { color: var(--coloradd); }
   font-size: 12px;
   line-height: 1.6;
   white-space: pre-line;
+  color: var(--colorfont);
 }
+
 .ls-tabTLE {
   font-family: var(--font-h4);
   font-size: 10px;
@@ -266,6 +419,7 @@ a:hover { color: var(--coloradd); }
   color: var(--colornews);
   text-transform: uppercase;
 }
+
 .highlight {
   margin: 12px 0;
   padding: 8px;
@@ -276,13 +430,14 @@ a:hover { color: var(--coloradd); }
   border-radius: 2px;
   white-space: normal;
 }
+
 .ls-blockintr {
   margin: 15px 0;
   padding-left: 10px;
   border-left: 1px solid var(--bordercolor);
   white-space: pre-line;
 }
-.ls-blockintr p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--colorfont); }
+
 .ls-blocksubtle {
   font-family: var(--font-h4);
   font-size: 13px;
@@ -290,30 +445,52 @@ a:hover { color: var(--coloradd); }
   margin-bottom: 5px;
   color: var(--coloradd);
 }
+
 .highlight_block {
   background: linear-gradient(to right, var(--color03), transparent);
   padding: 10px;
   border-left: 2px solid var(--colornews);
 }
+
 .ls-cont_end {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 18px;
   font-size: 12px;
   letter-spacing: 2px;
   color: var(--colorfont);
 }
+
 .ls-cont_end span { color: var(--colornews); }
+
 .lst_fpgroup {
   text-align: center;
   font-size: 10px;
   margin-top: 15px;
   color: #aaa;
 }
+
 .lst_fpgroup span { color: var(--colornews); }
 
 @media (max-width: 700px) {
   .lst_fptabs { gap: 14px; }
   .ls-header > div { font-size: 32px; }
+
+  .lst_infos_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lst_infos_right {
+    width: 100%;
+  }
+
+  .lst_fpava {
+    width: 220px;
+    height: 330px;
+  }
+
+  .lst_fpquo {
+    width: 80%;
+  }
 }
 </style>
 </head>
@@ -338,6 +515,7 @@ a:hover { color: var(--coloradd); }
 
 <div class="lst_fpcontent active" data-content="1">
   <div class="lst_fptabinfos">
+
     <div class="lst_fpimginfos">
       <img src="https://zupimages.net/up/26/18/x35s.jpg" alt="">
       <img src="https://zupimages.net/up/26/18/7jdf.jpg" alt="">
@@ -347,23 +525,33 @@ a:hover { color: var(--coloradd); }
 
     <div class="lst_fptlegen">Synthèse</div>
 
-    <div class="lst_fpblockinfos">
-      <div class="lst_fpinfoslist">
-        <div class="lst_fbinfo"><span>Type</span><p>Mature ; Fantastique dystopique </p></div>
-        <div class="lst_fbinfo"><span>Inspiration</span><p>Idée originale inspirée du <em>Hellaverse</em> (Vivienne Medrano), <em>L’Enfer</em> de Dante,  les récits bibliques de l’<em>Ancien</em> et du <em>Nouveau Testaments</em>, ainsi que quelques autres œuvres gravitant autour de la démonologie, des pactes, de la mort, des relations entre le Monde des Vivants et l’Au-delà. Vous trouvez nos inspirations dans nos <a href="https://lithium-souls.forumactif.com/t51-credits" target="_blank" rel="noopener noreferrer">crédits</a>.</p></div>
-        <div class="lst_fbinfo"><span>Majorité</span><p>Interdit aux moins de 18 ans.</p></div>
-        <div class="lst_fbinfo"><span>Fréquence RP</span><p>Une (1) publication par mois par personnage demandée.</p></div>
-        <div class="lst_fbinfo"><span>Mots par publlication</span><p>Aucun minimum de mots requis par publication.</p></div>
-        <div class="lst_fbinfo"><span>Univers</span><p>Évolutif de façon autonome qui ne cherche pas à reproduire avec exactitude le <em>Hellaverse</em>, mais à étudier l'Enfer et ses systèmes politiques, sociaux et relationnels. </p></div>
-        <div class="lst_fbinfo"><span>Droit à la déconnexion</span><p>Pas de Discord, nous n'avons qu'une ChatBox (<em>Back to the Future style</em>).</p></div>
-        <div class="lst_fbinfo"><span>Multicompte </span><p>Trois comptes maximum, dont deux qui peuvent être issus du <em>Hellaverse</em>.</p></div>
-        <div class="lst_fbinfo"><span>Approche</span><p> Favoriser l’approche : jouer pour jouer et pas « les joueurs attirent les joueurs ».</p></div>
-      </div>
-    </div>
+    <div class="lst_infos_layout">
 
-    <div class="lst_fpavaquo">
-      <img class="lst_fpava" src="https://zupimages.net/up/26/18/g1ft.jpg" alt="">
-      <div class="lst_fpquo">" La plus belle des ruses du diable est de vous persuader qu'il n'existe pas. " </div>
+      <div class="lst_infos_left">
+        <div class="lst_fpblockinfos">
+          <div class="lst_fpinfoslist">
+            <div class="lst_fbinfo"><span>Type</span><p>Mature ; Fantastique dystopique </p></div>
+
+            <div class="lst_fbinfo"><span>Inspiration</span><p>Idée originale inspirée du <em>Hellaverse</em> (Vivienne Medrano), <em>L’Enfer</em> de Dante,  les récits bibliques de l’<em>Ancien</em> et du <em>Nouveau Testaments</em>, ainsi que quelques autres œuvres gravitant autour de la démonologie, des pactes, de la mort, des relations entre le Monde des Vivants et l’Au-delà. Vous trouvez nos inspirations dans nos <a href="https://lithium-souls.forumactif.com/t51-credits" target="_blank" rel="noopener noreferrer">crédits</a>.</p></div>
+
+            <div class="lst_fbinfo"><span>Majorité</span><p>Interdit aux moins de 18 ans.</p></div>
+            <div class="lst_fbinfo"><span>Fréquence RP</span><p>Une (1) publication par mois par personnage demandée.</p></div>
+            <div class="lst_fbinfo"><span>Mots par publlication</span><p>Aucun minimum de mots requis par publication.</p></div>
+            <div class="lst_fbinfo"><span>Univers</span><p>Évolutif de façon autonome qui ne cherche pas à reproduire avec exactitude le <em>Hellaverse</em>, mais à étudier l'Enfer et ses systèmes politiques, sociaux et relationnels. </p></div>
+            <div class="lst_fbinfo"><span>Droit à la déconnexion</span><p>Pas de Discord, nous n'avons qu'une ChatBox (<em>Back to the Future style</em>).</p></div>
+            <div class="lst_fbinfo"><span>Multicompte </span><p>Trois comptes maximum, dont deux qui peuvent être issus du <em>Hellaverse</em>.</p></div>
+            <div class="lst_fbinfo"><span>Approche</span><p> Favoriser l’approche : jouer pour jouer et pas « les joueurs attirent les joueurs ».</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lst_infos_right">
+        <div class="lst_fpavaquo">
+          <img class="lst_fpava" src="https://zupimages.net/up/26/18/g1ft.jpg" alt="">
+          <div class="lst_fpquo">" La plus belle des ruses du diable est de vous persuader qu'il n'existe pas. " </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -381,7 +569,7 @@ a:hover { color: var(--coloradd); }
 
 <div class="lst_fpcontent" data-content="2">
   <div class="lst_fptabottle">Contexte</div>
-  <div style="text-align:center;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/h1t1.png" alt=""></div>
+  <div style="text-align:center;margin-bottom:14px;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/h1t1.png" alt=""></div>
 
   <div class="lst_fpblocktab">
     <div class="ls-header">
@@ -437,7 +625,7 @@ Si ce n’était que sans le Roi et sans la Reine, il n’y avait plus aucune ra
 </div>
 
 <div class="ls-blockintr highlight_block">
-  <div class="ls-blocksubtle">:warning: Enjeux</div>
+  <div class="ls-blocksubtle">⚠ Enjeux</div>
   Votre implication ou non implication à l'intrigue vous appartient complètement.
   Vous pouvez y prendre part de façon complète, modérée ou en éluder ses moindres effets compte tenu de la position sociale de votre personnage ou de vos préférences.
 
@@ -452,7 +640,7 @@ Si ce n’était que sans le Roi et sans la Reine, il n’y avait plus aucune ra
 
 <div class="lst_fpcontent" data-content="3">
   <div class="lst_fptabottle">Liens utiles</div>
-  <div style="text-align:center;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/3872.png" alt=""></div>
+  <div style="text-align:center;margin-bottom:14px;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/3872.png" alt=""></div>
 
   <div class="lst_fpblocktab">
     <div class="lst_fpblockinfos">
@@ -470,7 +658,7 @@ Si ce n’était que sans le Roi et sans la Reine, il n’y avait plus aucune ra
 
 <div class="lst_fpcontent" data-content="4">
   <div class="lst_fptabottle">Particularité</div>
-  <div style="text-align:center;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/xeiy.png" alt=""></div>
+  <div style="text-align:center;margin-bottom:14px;"><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/xeiy.png" alt=""></div>
 
   <div class="lst_fpblocktab">
     <div class="ls-tab_content">
@@ -505,11 +693,21 @@ Les personnages <span style="color:#8a4448;"><em>Hellaverse</em></span> ET <span
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         const id = tab.getAttribute('data-tab');
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+        });
+
+        contents.forEach(function(c) {
+          c.classList.remove('active');
+        });
+
         tab.classList.add('active');
+
         const target = box.querySelector('.lst_fpcontent[data-content="' + id + '"]');
-        if (target) target.classList.add('active');
+        if (target) {
+          target.classList.add('active');
+        }
       });
     });
   });
