@@ -1,0 +1,2678 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lithium Souls [18+] — Publicité et partenariat</title>
+<style>
+.rep-button,
+.rep-button:focus,
+.rep-button:active {
+  background: var(--bgcolor);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  outline: none;
+  margin: 6px 6px 0 0;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--mainradius);
+  color: var(--colorfont);
+  font: 13px var(--font-h4);
+  transition: 0.25s ease;
+}
+.rep-button:hover {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+  transform: translateY(-1px);
+}
+.rep-button::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: currentColor;
+  -webkit-mask: url("https://unpkg.com/lucide-static/icons/heart.svg") center / contain no-repeat;
+  mask: url("https://unpkg.com/lucide-static/icons/heart.svg") center / contain no-repeat;
+  transition: 0.2s ease;
+}
+
+/* petit effet hover */
+.rep-button:hover::before {
+  transform: scale(1.1);
+}
+a.button,
+a.button1,
+a.button2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font: 14px var(--font-h4);
+  text-transform: lowercase;
+  color: var(--colorfont);
+  background: var(--bgcolor);
+  border-radius: var(--mainradius);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+a.button:hover,
+a.button1:hover,
+a.button2:hover {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+  transform: translateY(-1px);
+}
+.rep-button.fa_liked { background: linear-gradient(to right, var(--colornews), var(--coloradd)); }
+a[class*="ion-"] i {
+  display: none !important;
+}
+a[class*="ion-"]::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: currentColor;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+a.ion-post::before {
+  -webkit-mask-image: url("https://unpkg.com/lucide-static/icons/square-pen.svg");
+  mask-image: url("https://unpkg.com/lucide-static/icons/square-pen.svg");
+}
+a.ion-reply::before {
+  -webkit-mask-image: url("https://unpkg.com/lucide-static/icons/message-circle-reply.svg");
+  mask-image: url("https://unpkg.com/lucide-static/icons/message-circle-reply.svg");
+}
+a.ion-edit::before {
+  -webkit-mask-image: url("https://unpkg.com/lucide-static/icons/file-pen-line.svg");
+  mask-image: url("https://unpkg.com/lucide-static/icons/file-pen-line.svg");
+}
+a.ion-locked::before {
+  -webkit-mask-image: url("https://unpkg.com/lucide-static/icons/lock-keyhole.svg");
+  mask-image: url("https://unpkg.com/lucide-static/icons/lock-keyhole.svg");
+}
+
+/* -------------------- FONCTIONNALITÉS GÉNÉRALES DU FORUM -------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-image: var(--bodybg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bodybg:url('https://zupimages.net/up/26/16/xhlt.png');
+  --bgcolor: #0F0F0F; /* noir, couleur principale, notamment du fond */
+  --color02: #1A1A1A; /* deuxième couleur */
+  --color03: #222222; /* troisième couleur */
+
+  --colornews: #baab7b; /* doré */
+  --coloradd: #9986A6; /* mauve */
+  --bordercolor: #777777; /* gris, couleur des bordures */
+  --colorfont: #f1f1f1; /* couleur des polices d'écriture */
+  
+  --imgctg:url('https://zupimages.net/up/26/12/tipc.png');
+  --imgqeel:url('https://zupimages.net/up/26/15/ukrl.png');
+  
+  --gradient:linear-gradient(to right, var(--colornews), var(--coloradd));
+  --gradientbis:linear-gradient(to left, var(--colornews), var(--coloradd));
+
+  --font-h1: "Gravitas One", serif;
+  --font-h2: "Abril Fatface", serif;
+  --font-h3: "DM Serif Display", serif;
+  --font-h4: "Bebas Neue", sans-serif;
+  --font-text: "Google Sans", sans-serif;
+
+  --mainradius: 5px; 
+  --radiusbis: 10px; 
+  
+  --avafilter: grayscale(0) sepia(10%) saturate(90%) contrast(105%);
+  --avahover: filter 0.4s ease, transform 0.3s ease;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+} 
+
+/* header */
+.lithium-oh_header {
+  width: 100%;
+  margin: 0 auto;
+}
+.lithium-oh_header img {
+  width: 100%;
+}
+
+/* gère la taille du bloc de la PA - qui est dans une page HTML et généré dans le overall_header dans une iframe */
+#pa-container {
+  width: 1020px;
+  margin: 0 -10px;
+}
+#pa-iframe {
+  width: 100%;
+  height: 385px;
+}
+#wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bgcolor);
+  border-radius: 0;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  padding: 20px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--colornews),
+    var(--coloradd, var(--colornews))
+  );
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+#page-footer {
+  background-color: var(--bgcolor)!important;
+  width: 1050px!important;
+  margin: 0 auto!important;
+}
+.footerbar-system a, .footerbar-user a {
+  color: var(--colornews);
+  background: var(--color03);
+  padding: 3px 10px;
+  border-radius: var(--radiusbis);
+  font: 12px var(--font-text);
+}
+tw {
+ filter: blur(3px);
+ transition: filter .3s;
+}
+img.tw {
+ filter: blur(10px);
+ clip-path: inset(0);
+ transition: filter .3s;
+}
+tw:hover, .tw:hover {
+ filter: none;
+}
+
+/* ----- DEBUT NAVBAR ----- */
+.mainmenu img { display: none; } 
+.mainmenu { background: none !important; } 
+.mainmenu[href="/calendar"]{display:none!important;} 
+.mainmenu[href="/gallery/index.htm"]{display:none!important;} 
+.mainmenu[href="/images"]{display:none!important;} 
+.mainmenu[href="/discover"]{display:none!important;} 
+.mainmenu[href="/faq"]{display:none!important;} 
+.lithium-oh_navbar ul, .lithium-oh_navbar li { list-style: none; margin: 0; padding: 0; } 
+.lithium-oh_navbar { position: sticky; top: 0; z-index: 990; width: 100%; } 
+.nav-inner {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: var(--mainradius);
+  transition: width 0.35s ease,
+              transform 0.6s cubic-bezier(.22,1,.36,1),
+              border-radius 0.4s ease,
+              background 0.3s ease,
+              box-shadow 0.3s ease,
+              padding 0.3s ease,
+              margin-top 0.3s ease;
+}
+.nav-inner ul {
+  display: flex;
+  gap: 20px;
+}
+.nav-inner a {
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.nav-inner a.mainmenu span.link-text {
+  display: inline-block;
+  transition: 0.3s;
+}
+.nav-inner a.mainmenu:hover span.link-text {
+  background: linear-gradient(to right, var(--colornews), var(--coloradd));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-inner a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ccc;
+  transition: width 0.3s;
+}
+.nav-inner a:hover::after {
+  width: 100%;
+}
+.lithium-oh_navbar.scrolled .nav-inner {
+  width: calc(100vw - 15px);
+  transform: translateX(-50%);
+  border-radius: 0;
+  margin-top: 0;
+  padding: 10px 40px;
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.nav-inner a.mainmenu {
+  position: inline-flex;
+  padding-left: 28px;
+  align-items: center;
+  gap: 5px;
+}
+.nav-inner a.mainmenu::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 28px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, var(--colornews), var(--coloradd));
+  transition: width 0.3s;
+}
+.nav-inner a.mainmenu:hover::after {
+  width: calc(100% - 28px);
+}
+.nav-inner a.mainmenu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #ccc;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: 0.3s;
+}
+.nav-inner a.mainmenu:hover::before {
+  background-color: var(--colornews);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.15) rotate(9deg);
+}
+.nav-inner a.mainmenu:hover::before { background-color:var(--colornews); opacity: 1; transform: translateY(-50%) scale(1.15) rotate(9deg);} 
+.mainmenu[href="/"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/home.svg"); } 
+.mainmenu[href="/search"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/search.svg"); } 
+.mainmenu[href="/memberlist"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/users.svg"); } 
+.mainmenu[href="/groups"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/group.svg"); } 
+.mainmenu[href="/profile?mode=editprofile"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/user.svg"); } 
+.mainmenu[href="/privmsg?folder=inbox"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/mail.svg"); } 
+.mainmenu[href="/register"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/user-plus.svg"); } 
+.mainmenu[href="/login"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/log-in.svg"); } 
+.mainmenu[href*="logout=1"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/log-out.svg"); }
+
+/* ===================================== DÉBUT INDEX_BOX ===================================== */
+/* - LIENS UTILES CTG - */
+.lithium-ib_toplink {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+.lithium-ib_linksleft,
+.lithium-ib_linksright {
+  display: flex;
+  gap: 10px;
+}
+.lithium-ib_linksleft {
+  justify-content: flex-start;
+}
+.lithium-ib_linksright {
+  justify-content: flex-end;
+}
+.lithium-ib_linksleft > div,
+.lithium-ib_linksright > div {
+  background-color: var(--color03);
+  border-radius: var(--radiusbis);
+  padding: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+.lithium-ib_linksleft > divdiv:hover,
+.lithium-ib_linksright > divdiv:hover {
+  background: rgba(255,255,255,0.05);
+}
+.lithium-ib_toplink a {
+  position: relative;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lithium-ib_toplink a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--colornews);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: 0.3s;
+}
+.lithium-ib_toplink a:hover::before {
+  transform: scale(1.2) rotate(6deg);
+  background: linear-gradient(to right, var(--colornews), var(--coloradd));
+}
+.lithium-ib_toplink a::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: linear-gradient(
+    135deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+}
+.lithium-ib_toplink a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+a[href*="search_id=newposts"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/flame.svg"); }
+a[href*="search_id=egosearch"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/inbox.svg"); }
+a[href*="search_id=unanswered"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/message-circle.svg"); }
+a[href*="mark=forums"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/check-circle.svg"); }
+a[href*="search_id=activetopics"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/calendar.svg"); }
+a[href*="poster"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/trophy.svg"); }
+a[href*="overall"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/bar-chart-2.svg"); }
+a[href*="delete_cookies"]::before { mask-image: url("https://unpkg.com/lucide-static/icons/trash-2.svg"); }
+
+/* titre des catégories */
+.lithium-id_catetle {
+  margin: 100px 0;
+  position:relative;
+}
+.lithium-id_catetle::before, lithium-mb_tle::before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-image: var(--imgctg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  pointer-events: none; 
+}
+.lithium-id_catetle > h2 {
+  font: 20px var(--font-h1);
+  text-transform: uppercase;
+  background-color: var(--bgcolor);
+  text-align: center;
+  border-radius: 100px;
+  position: relative;
+  z-index:20;
+  padding: 0 10px;
+  color: var(--colorfont);
+  width: 100%;
+  letter-spacing: 5px;
+}
+.lithium-id_catetle > h2::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color03);
+  width: 1010px;
+  height: 5px;
+  border-radius: var(--mainradius);
+  left: 0;
+  z-index: -1;
+  margin: 10px 0;
+}
+.lithium-ib_ctebackground {
+  width: 100%;
+  height: 125px;
+  background-color: var(--color02);
+  display: flex;
+  flex-wrap: wrap;
+  border:1px solid var(--color03);
+  position:relative;
+  z-index:10;
+  margin:10px 0;
+  border-radius: var(--mainradius);
+  justify-content: space-between;
+}
+/* bloc qui gère l'affichage des avatars + l'image de statut des forums (new / no new / lock ) */
+.lithium-ib_avablock {
+  width: 110px;
+  height: 110px;
+  margin: 10px 0;
+}
+/* placement et taille avatar */
+.lithium-ib_avatar {
+  margin: -95px 15px;
+  width: 80px;
+  height: 80px; 
+}
+/* gère l'affichage avatar */
+.lithium-ib_avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+/* gère l'affichage des images de statut de forum */
+dl.icon.ib-ctg {
+  min-height: 110px;
+  background-position: center !important;
+  background-size: 110px 110px !important;
+  border-radius: 0 100px 100px 0;
+}
+/* titre des forums + sous-forum */
+.lithium-ib_titleblock {
+  width: 900px;
+  height:40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* gère la ligne du titre forum */
+.lithium-ib_titleblock::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: var(--colornews);
+  width: 860px;
+  margin: 29px 27px;
+  height: 1px;
+}
+/* mise en page sous-forum global */
+.lithium-ib_subfrm {
+  background-color: var(--color02);
+  height: 15px;
+  margin: 19px 20px;
+  font-size: 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 10px;
+}
+.lithium-ib_subfrm.transparent {
+  background-color: transparent;
+}
+/* affichage sous-forum individuel */
+.lithium-ib_subfrm a {
+  display: inline-block;
+  background-color: var(--colorfont);
+  font: 14px var(--font-h4);
+  border-radius: var(--mainradius);
+  height: 15px;
+  padding: 0px 10px;
+  margin: 0 10px 0 0;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+/* titre forum */
+.lithium-ib_titlefrm {
+  text-align: right;
+  margin: 10px;
+  background-color: var(--color02);
+  position: relative;
+  z-index: 10;
+  padding: 0 0 0 25px;
+}
+.lithium-ib_titlefrm a {
+  font: 25px var(--font-h3);
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--colornews), var(--coloradd));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lithium-ib_blockinfo {
+  width: 865px;
+  margin: -80px 0 0 140px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* block description */
+.lithium-ib_blockdesc { 
+  width:480px;
+}
+.lithium-ib_blockdesc > p {
+  overflow: auto;
+  height: 40px;
+  text-align: justify;
+  font: 12px var(--font-text);
+  color: var(--colorfont);
+  font-style: italic;
+  border-left: 2px solid var(--coloradd);
+  padding-left: 10px;
+}
+.lithium-ib_blockdesc > p::-webkit-scrollbar {
+  display: none;
+} 
+.lithium-ib_blockdesc > div {
+  text-align: center;
+  float: right;
+  height: 15px;
+  width: 135px;
+  font: 11px var(--font-text);
+  color: var(--colornews);
+  background-color: var(--color03);
+  font-style: italic;
+  text-transform: lowercase;
+  margin: -7px 0;
+  border-radius: var(--radiusbis);
+}
+.lithium-ib_blockdesc img {
+  height: 61px;
+  width: 170px;
+  border-radius: var(--mainradius);
+  filter: var(--avafilter);
+  object-fit: cover;
+  position: absolute;
+  outline: 1px solid var(--color02);
+  outline-offset: 3px;
+  margin: 3px 481px;
+}
+.lithium-ib_lastpost {
+  width: 190px;
+  font: 12px var(--font-h2);
+  text-align: center;
+  border-radius: var(--mainradius);
+  height: 42px;
+  background-color: var(--color03);
+  display: flex;
+  flex-direction: column;
+}
+a.lithium-ib_latesttopic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font: 15px var(--font-h3);
+  text-transform:uppercase;
+  color: var(--colornews);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radiusbis);
+}
+.lithium-ib_user {
+  font: 10px var(--font-text);
+  color: var(--colorfont);
+  margin: -5px -20px;
+  background: transparent;
+}
+.last-post-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.last-post-icon img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  display: block;
+}
+/* ===================================== FIN INDEX_BOX ===================================== */
+
+/* ---------- BALISES CODE / QUOTE / HIDE / SPOILER / BLOCKQUOTE ---------- */
+
+blockquote, .quote {
+  border-left: 5px solid var(--coloradd);
+  background: var(--color02);
+  border-radius: var(--radiusbis);
+  font-style: italic;
+  text-align: justify;
+  font-size: 12px var(--font-text);
+  color: var(--bordercolor);
+  margin: 0 auto;
+}
+
+blockquote cite, .quote .quote-author {
+  margin-bottom: 5px;
+  color: var(--colornews);
+  font: 20px var(--font-h4);
+}
+blockquote:before {
+  content: "\f347";
+  color: rgb(0 0 0 / .1);
+  font-size: 17.6rem;
+  position: absolute;
+  right: 20px;
+  top: -5px;
+}
+
+/* CODE / [code] / .codebox */
+  dl.codebox.spoiler::before,
+dl.codebox.hidecode::before {
+    content: none !important;
+}
+.codebox {
+  border: none !important;
+  width: 100% !important;
+  border-radius: var(--radiusbis) !important;
+  background: var(--color02) !important;
+  color: #f8f8f2 !important;
+  font: 12px var(--font-text) !important;
+  padding: 12px !important;
+}
+dl.codebox dt {
+  border: none;
+  margin: 20px 35px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  display: block;
+  color: #f1f1f1;
+}
+dl.codebox code {
+  overflow: auto;
+  display: block;
+  height: auto;
+  max-height: 250px;
+  white-space: normal;
+  padding: 10px;
+  text-align: justify;
+  font: .9em Courier, Courier New, monospace;
+  line-height: 1.3em;
+  color: #2E8B57;
+}
+  
+  dl.codebox:not(.spoiler):not(.hidecode)::before {
+    content: "\f271";
+    color: #f1f1f1;
+    position: absolute;
+    top: 35px;
+    font-family: "Ionicons";
+    left: 30px;
+    font-size: 13px;
+}
+  
+/* dl.codebox:before {
+  content: "\f271";
+  color: #f1f1f1;
+  position: absolute;
+  top: 35px;
+  font-family: "Ionicons";
+  left: 30px;
+  font-size: 13px;
+} */
+
+.codebox .genmed {
+  font-size: 14px;
+  color: #663300;
+  font-style: italic;
+}
+
+/* Bouton copier */
+.codebox button.copy-btn {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  background: var(--colorfont);
+  border: none;
+  color: var(--color02);
+  padding: 3px 10px;
+  border-radius: var(--mainradius);
+  cursor: pointer;
+  font-size: 12px;
+}
+.codebox button.copy-btn:hover {
+  background: #357ab8;
+}
+
+/* SPOILER / HIDE */
+.codebox.spoiler {
+  padding: 20px!important;
+  border-radius: var(--radiusbis) !important;
+  width: 100% !important;
+  margin: 0 auto!important;
+  background: var(--color02) !important;
+  border: none !important;
+}
+.codebox.spoiler dd {
+  padding: 10px 0 0 0!important;
+}
+.codebox.hidecode {
+  padding: 20px !important;
+  border-radius: var(--radiusbis) !important;
+  width: 100% !important;
+  margin: 15px auto;
+  background: var(--color02) !important;
+  border-right: 5px solid var(--colornews) !important;
+}
+.hidecode dt {
+  display:none!important;
+}
+.spoiler dt {
+  font: 20px var(--font-h4) !important;
+  padding: 0px 12px!important;
+  border: none !important;
+  width: 100%;
+  margin: 0px 0 0px 0 !important;
+  cursor: pointer;
+  background: var(--coloradd);
+  color: var(--colorfont)!important;
+  border-radius: var(--mainradius);
+}
+
+/* ===================================== DÉBUT VIEWTOPIC_BODY ===================================== */
+.lithium-vb_blocktitle {
+  width: 100%;
+  margin: 70px 0 40px;
+  text-align: center;
+}
+h1.lithium-vb_titlemap {
+  display: inline-block; 
+  font: 40px var(--font-h4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--colorfont);
+  width:100%;
+  margin: 0;
+  padding-bottom: 10px;
+  position: relative;
+}
+h1.lithium-vb_titlemap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--colornews),
+    transparent
+  );
+  border-radius: 2px;
+  opacity: 0.8;
+}
+.lithium-vb_brdcrmbtrail {
+  margin-top: 12px;
+  display: inline-block;
+  font: 13px var(--font-h2);
+  text-transform: lowercase;
+  padding: 6px 14px;
+  background: var(--bgcolor);
+  border-radius: var(--mainradius);
+  color: var(--colorfont);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+.lithium-vb_brdcrmbtrail a {
+  color: var(--colorfont);
+  opacity: 0.7;
+  transition: 0.2s;
+}
+.lithium-vb_brdcrmbtrail a:hover {
+  opacity: 1;
+  color: var(--colornews);
+}
+
+/* ----- début bloc sujet ----- */
+  
+.lithium-vb_postprofile .row1,
+.lithium-vb_postprofile .row2 {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* attributs généraux du bloc par FA, pas nécessaire de toucher */
+/* .row2 {
+  background-color: transparent;
+  box-shadow:none;
+} */
+.post {
+  border: none;
+  background-position: 0;
+  background-repeat: unset;
+  border-radius: 0px;
+  border-style: none;
+  border-width: 0px;
+  box-shadow: none;
+  margin: 24px 0;
+}
+.sub-header-buttons {
+  float: left;
+  margin: 0 0 30px 0;
+}
+/* bloc qui gère l'ensemble de la structure */
+.lithium-vb_blockmember {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius:var(--mainradius);
+  width: 100%;
+}
+/* bloc qui va gérer l'affichage de la bande gauche avec l'avatar, le rang, le bloc des infos */
+.lithium-vb_blockperso {
+  width: 250px;
+  background-color: var(--color02);
+  border-radius: 5px 0 0 5px;
+}
+.lithium-vb_posttracker {
+  position: sticky;
+  top: 45px;
+  align-self: flex-start;
+  margin-bottom:15px;
+}
+.lithium-vb_postname {
+  width: 220px;
+  margin: 15px auto;
+  text-align: center;
+}
+.lithium-vb_postname strong {
+  color: #f1f1f1;
+  display: inline-block;
+  font: 20px var(--font-h2);
+  min-width: 80px;
+  max-width:220px;
+  background-color: var(--color02);
+}
+.short-pseudo {
+  border-bottom: 1px solid currentColor;
+  height: 22px;
+  padding: 2px 4px;
+  transition: all 0.2s ease;
+  width: 220px;
+}
+.long-pseudo {
+  border-bottom: 1px solid currentColor;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+  width:220px;
+}
+.lithium-vb_posteravatar {
+  margin: 15px;
+  border: 10px solid var(--bgcolor);
+  width: 220px;
+  height: 340px;
+  overflow:hidden;
+}
+.lithium-vb_posteravatar img {
+  max-width: 222px!important;
+  margin: 0;
+  object-fit:cover;
+}
+.lithium-vb_rank {
+  font: 12px var(--font-h2);
+  color: var(--colorfont);
+  text-transform: uppercase;
+  margin: 15px;
+  padding: 0 0 10px 0;
+}
+.lithium-vb_rank > span {
+  display:block;
+  font: 12px var(--font-h2);
+  border-bottom: 1px solid var(--colorfont);
+  padding: 0 0 10px 0;
+}
+.group-label {
+  text-align: right;
+  margin: 5px 0;
+  font-style: italic;
+}
+.lithium-vb_charafields {
+  margin: 15px;
+  height:150px;
+  overflow:auto;
+  padding: 10px;
+  background: var(--color03);
+  border-radius: var(--mainradius);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.lithium-vb_charafield {
+  font: 11px var(--font-text);
+  padding: 6px 8px;
+  border-radius: var(--mainradius);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  transition: 0.3s ease;
+}
+.lithium-vb_charalabel {
+  font: 10px var(--font-h4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--colornews);
+  opacity: 0.8;
+}
+.lithium-vb_characontent {
+  color: var(--colorfont);
+  text-align: right;
+  max-width: 120px;
+}
+.lithium-vb_characontent img {
+  object-fit:cover!important;
+  width: 183px!important;
+}
+/* bloc qui va gérer l'affichage général de la mise en page du texte, la date, les boutons edit */
+.lithium-vb_blockcontent {
+  width: 760px;
+  background-color: var(--color03);
+  border-radius: 0 5px 5px 0;
+}
+/* affichage des boutons d'édition */
+.lithium-vb_btnedit {
+  margin: 22px 0 0 0;
+}
+.profile-icons {
+  display: flex;
+  gap: 6px;
+  justify-content:center;
+}
+.profile-icons a {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color02);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  transition: 0.25s;
+}
+.profile-icons a::before {
+  font-size: 13px;
+  color: var(--colorfont);
+}
+.icon-quote::before { content: "❝"; }
+.icon-edit::before { content: "✎"; }
+.icon-delete::before { content: "✕"; }
+.icon-ip::before { content: "⛨"; }
+.lithium-vb_topictle {
+  font: 12px var(--font-h2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--colorfont);
+}
+.profile-icons a:hover {
+  background: var(--color03);
+  border-color: var(--colornews);
+  transform: translateY(-2px);
+  color:var(--colorfont);
+}
+.profile-icons a:hover::before {
+  color: var(--colornews);
+}
+.lithium-vb_content {
+  padding: 60px;
+  text-align: justify;
+  font: 12px var(--font-text);
+  color: var(--colorfont);
+}
+.lithium-vb_content img {
+  max-width:600px;
+  object-fit:cover;
+}
+/* ===================================== FIN VIEWTOPIC_BODY ===================================== */
+/* ===================================== DÉBUT LISTE DES SUJETS ===================================== */
+/* ----- topic_list_box ----- */
+.lithium-tlb_titlerow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font: 20px var(--font-h3);
+  z-index: 3;
+  position: relative;
+  font-weight: 600;
+  color: var(--colorfont);
+  text-transform: uppercase;
+  margin: 25px 0 0;
+}
+.lithium-tlb_titlerow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-left: 15px;
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+}
+.lithium-tlb_backgroundnone {
+  width: 100%;
+  background-color: var(--color02);
+  border: 1px solid var(--color03);
+  padding: 30px;
+  border-radius: var(--radiusbis);
+  margin: 20px 0;
+  font: 12px var(--font-text);
+  color: var(--colorfont);
+  text-align: center;
+  text-transform: uppercase;
+}
+.lithium-tlb_background {
+  background-color: var(--color02) !important;
+  margin: 10px 0;
+  height: 60px;
+  display: flex;
+  border: 1px solid var(--color03);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: var(--radiusbis);
+}
+.lithium-tlb_blocktitle {
+  margin: 5px 10px 10px 10px;
+  display: flex;
+  width: 930px;
+  flex-wrap: wrap;
+}
+.lithium-tlb_topicauth {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 800px;
+  gap: 10px;
+}
+.lithium-tlb_topictleFRM {
+  font: 20px var(--font-h4);
+  text-transform: uppercase;
+}
+.lithium-tlb_topictleFRM a {
+  color:var(--colorfont);
+}
+.announcement .lithium-tlb_topictleFRM {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.announcement .lithium-tlb_topictleFRM::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+  -webkit-mask: url("https://unpkg.com/lucide-static/icons/alert-circle.svg") center / contain no-repeat;
+  mask: url("https://unpkg.com/lucide-static/icons/alert-circle.svg") center / contain no-repeat;
+}
+.lithium-tlb_author {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bgcolor);
+  height: 20px;
+  font: var(--font-text);
+  border-radius: var(--mainradius);
+  color: var(--colorfont);
+  padding: 0 10px;
+}
+.lithium-tlb_topicauth img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  filter: brightness(0) saturate(100%) 
+          invert(65%) sepia(20%) 
+          saturate(400%) hue-rotate(230deg);
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+.lithium-tlb_blockstats {
+  margin: 10px;
+}
+.lithium-tlb_pages {
+}
+.lithium-tlb_viewsreplies {
+  font: 10px var(--font-text);
+  color: var(--colornews);
+  font-style: italic;
+}
+.lithium-tlb_descblock {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  color: var(--bordercolor);
+  gap: 10px;
+  margin: -13px 10px;
+}
+.lithium-tlb_descblock::before {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: var(--colornews);
+  order: 1;
+}
+.lithium-tlb_topicdesc {
+  order: 0;
+  font: 12px var(--font-text);
+  font-style: italic;
+}
+.lithium-tlb_lastpostinfos {
+  order: 2;
+  margin-left: auto;
+  font: 12px var(--font-h4);
+}
+.lithium-tlb_blockava {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: -42px;
+}
+.lithium-tlb_lastpostava {    
+  width: 50px;
+  height: 50px;
+  margin: 0 -20px;
+  position: relative;
+}
+.lithium-tlb_lastpostava img {
+  width:100%;
+  height:100%;
+  border: 5px solid var(--color03);
+  border-radius:100%;
+  object-fit:cover;
+}
+.topic-icon {
+  min-height: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 33px 33px;
+  width: 35px;
+  height: 35px;
+}
+/* ----- viewforum_body ----- */
+.ls-viewbod_deco {
+  position: relative;
+  padding: 55px 0 0;
+}
+.ls-viewbod_deco::before {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 10px; 
+  background-image: var(--imgctg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.25;
+}
+.lithium-viewbod_pagetle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+.lithium-viewbod_pagetle::before {
+  content: "";
+  flex: 1;
+  height: 3px;
+  margin-right: 15px;
+  border-radius: var(--mainradius);
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+}
+.lithium-viewbod_pagetle::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  margin-left: 15px;
+  border-radius: var(--mainradius);
+  background: linear-gradient(
+    90deg,
+    var(--coloradd),
+    var(--colornews)
+  );
+}
+.lithium-viewbod_pagetle a {
+  font: 30px var(--font-h2);
+  text-transform: uppercase;
+  color: var(--colornews);
+  white-space: nowrap;
+}
+.lithium-viewbod_pagetle a {
+  font: 30px var(--font-h2);
+  text-transform: uppercase;
+  color: var(--colornews);
+  white-space: nowrap; 
+}
+.lithium-viewbod_subheadpath {
+  margin-top: 12px;
+  display: inline-block;
+  font: 13px var(--font-h2);
+  text-transform: lowercase;
+  padding: 6px 14px;
+  background: var(--bgcolor);
+  border-radius: var(--mainradius);
+  color: var(--colorfont);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+.lithium-viewbod_subheadpath {
+  display: table;
+  margin: 12px auto 0;
+}
+.lithium-viewbod_subheadpath a {
+  color: var(--colorfont);
+  opacity: 0.7;
+  transition: 0.2s;
+}
+.lithium-viewbod_subheadpath a:hover {
+  opacity: 1;
+  color: var(--colornews);
+}
+.lithium-viewbod_pagedesc {
+  width: 100%;
+  background-color: var(--color03);
+  padding: 30px;
+  border-radius: var(--radiusbis);
+  margin: 20px 0;
+  font: 12px var(--font-text);
+  color: var(--colorfont);
+  text-align: justify;
+}
+.lithium-viewbod_links {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.lithium-viewbod_links > span {
+  display:block;
+  background-color: var(--color03);
+  padding: 0 10px;
+  padding: 5px 10px;
+  height: 25px;
+  font: 12px var(--font-h4);
+  text-transform: uppercase;
+  letter-spacing:1px;
+  border-radius: var(--radiusbis);
+}
+.lithium-viewbod_links > span a {
+  color: var(--colorfont);
+}
+.lithium-viewbod_blockmodo > div {
+  font: 20px var(--font-h2);
+  text-transform: uppercase;
+  color: var(--colorfont);
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align:right;
+  z-index:10;
+}
+.lithium-viewbod_blockmodo > div::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-right: 15px;
+  background: linear-gradient(
+    90deg,
+    var(--colornews),
+    var(--coloradd)
+  );
+}
+.lithium-viewbod_blockmodo > p {
+  font: 12px var(--font-text);
+  background-color: var(--color03);
+  padding: 20px;
+  margin: 10px 0;
+  color: var(--colorfont);
+  border-radius: var(--mainradius);
+}
+.lithium-viewbod_blockmodo > p a {
+  color: var(--colorfont);
+}
+/* ===================================== FIN LISTE DES SUJETS ===================================== */
+  
+/* ===================================== DÉBUT ENSEMBLE DES FICHES ===================================== */
+  
+.ls-codex_bg {
+  width: 650px;
+  margin: auto;
+  font-family: var(--font-text);
+  background: var(--bgcolor);
+  padding: 12px;
+  border-radius: var(--radiusbis);
+}
+.ls-innerbox {
+  padding: 18px;
+  border-radius: var(--mainradius);
+  background: var(--color02);
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--color02), var(--color02)),
+    var(--gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.ls-header {
+  margin: 10px 0 30px 0;
+}
+.ls-header > div {
+  font-family: var(--font-h3);
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--colorfont);
+}
+.ls-header > span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-align: center;
+  display: block;
+  opacity: 0.5;
+  color: var(--colorfont);
+}
+.ls_rs-fpbg {
+  color: #ccc;
+  width: 650px;
+  margin: auto;
+  font-family: var(--font-text);
+  background: var(--bgcolor);
+  padding: 12px;
+  border-radius: var(--mainradius);
+}
+.ls_rs-fpin {
+  padding: 20px;
+  border-radius: var(--mainradius);
+  background: rgba(20, 20, 20, 0.85);
+  position: relative;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+.ls_rs-fpin::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: var(--mainradius);
+  background: var(--gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+.ls_rs-fphead {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ls_rs-fpname {
+  display: inline-block;
+  font: 36px var(--font-h2);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 50px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.15),
+    rgb(255 255 255 / 0.02)
+  );
+}
+.ls_rs-fpname span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  font: 12px var(--font-h4);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--colornews);
+}
+.ls_rs-fpnamequo {
+  letter-spacing: 2px;
+  font: 12px var(--font-h4);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--colornews);
+}
+.ls_rs-main {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.ls_rs-fpavaquo {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ls_rs-fpava {
+  width: 200px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--mainradius);
+  outline: 1px solid var(--bordercolor);
+  outline-offset: 8px;
+  transition: 0.4s;
+}
+.ls_rs-fpquo {
+  font: 14px var(--font-h4);
+  width: 200px;
+  margin-top: 15px;
+  border-left: 2px var(--coloradd) solid;
+  padding-left: 10px;
+  text-align: justify;
+}
+.ls_rs-right {
+  flex: 1;
+}
+.ls_rs-fptlegen {
+  text-align: center;
+  font: 20px var(--font-h2);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--colornews);
+  margin-bottom: 10px;
+  position: relative;
+}
+.ls_rs-fptlegen::before,
+.ls_rs-fptlegen::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--colornews));
+}
+.ls_rs-fptlegen::before {
+  left: 0;
+}
+.ls_rs-fptlegen::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+.ls_rs-fpblockinfos {
+  background: var(--color03);
+  padding: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+  border-left: 2px solid var(--bordercolor);
+}
+.ls_rs-fpinfoslist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ls_rs-fbinfo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 5px;
+}
+.ls_rs-fbinfo span {
+  font: 15px var(--font-h4);
+  color: var(--coloradd);
+}
+.ls_rs-fbinfo p {
+  font-size: 12px;
+}
+.ls_rs-freeblock {
+  margin-top: 25px;
+  background: var(--color03);
+  padding: 20px;
+  border-left: 2px solid var(--bordercolor);
+  overflow: hidden;
+  position: relative;
+}
+.ls_rs-freecontent {
+  max-height: 120px;
+  overflow: hidden;
+  opacity: 0.6;
+  transition: 0.4s;
+  text-align: justify;
+}
+.ls_rs-freeblock:hover .ls_rs-freecontent {
+  max-height: 500px;
+  opacity: 1;
+}
+.ls_rs-fpgroup {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 15px;
+}
+.ls_rs-fpgroup span {
+  color: var(--colornews);
+}
+
+/* DEBUT FICHE RP */
+.ls_rs-rpname {
+  font: 32px var(--font-h2);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.15),
+    rgb(255 255 255 / 0.02)
+  );
+}
+.ls_rs-rpname span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ls_rs-rpquote {
+  font: 11px var(--font-h4);
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--colornews);
+  padding-bottom: 10px;
+}
+.ls_rs-rpsection {
+  margin-top: 25px;
+}
+.ls_rs-rptitle {
+  font: 18px var(--font-h2);
+  text-transform: uppercase;
+  color: var(--colornews);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.ls_rs-rptitle::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--gradient);
+  margin-top: 5px;
+  opacity: 0.4;
+}
+.ls_rs-rplist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ls_rs-rpitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color03);
+  padding: 12px;
+  border-left: 2px solid var(--colornews);
+  transition: 0.3s;
+}
+.ls_rs-rpitem:hover {
+  transform: translateX(5px);
+  background: var(--color02);
+}
+.ls_rs-rpinfo span {
+  font: 14px var(--font-h4);
+  color: var(--coloradd);
+}
+.ls_rs-rpinfo p {
+  font-size: 11px;
+}
+.ls_rs-rpitem a {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--colornews);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.ls_rs-rpitem a:hover {
+  opacity: 1;
+}
+.ls_rs-rpitem.done {
+  border-left: 2px solid #6f8f6f;
+}
+.ls_rs-rpitem.abandoned {
+  border-left: 2px solid #8f6f6f;
+  opacity: 0.6;
+}
+
+/* FICHE DES PERSONNAGES */
+.ls_rs-linksection {
+  margin-top: 25px;
+}
+.ls_rs-linktitle {
+  font: 18px var(--font-h2);
+  color: var(--colornews);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+}
+.ls_rs-linktitle::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--gradient);
+  opacity: 0.4;
+  margin-top: 5px;
+}
+.ls_rs-linklist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ls_rs-linkitem {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: var(--color03);
+  padding: 15px;
+  border-left: 2px solid var(--colornews);
+  transition: 0.3s;
+}
+.ls_rs-linkitem:hover {
+  background: var(--color02);
+  transform: translateX(5px);
+}
+.ls_rs-linkava {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 1px solid var(--coloradd);
+  outline-offset: 3px;
+}
+.ls_rs-linkava img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTENU */
+.ls_rs-linkcontent {
+  flex: 1;
+}
+.ls_rs-linktop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+.ls_rs-linkname {
+  font: 15px var(--font-h4);
+  color: var(--coloradd);
+}
+.ls_rs-linktype {
+  font-size: 11px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ls_rs-linkdesc {
+  font-size: 12px;
+  text-align: justify;
+  line-height: 1.5;
+  border-left: 2px solid var(--coloradd);
+  padding-left: 10px;
+}
+.ls-bottinblock {
+  margin-bottom: 15px;
+}
+.ls-bottintle {
+  font-family: var(--font-h4);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--coloradd);
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--bordercolor);
+  padding-bottom: 3px;
+}
+.ls-bottinlist {
+  padding-left: 5px;
+}
+.ls-bottinitem {
+  font-size: 12px;
+  padding: 4px 0;
+  color: var(--colorfont);
+  display: flex;
+  gap: 6px;
+}
+.ls-bottinitem div {
+  color: var(--coloradd);
+  font-family: var(--font-h3);
+}
+.ls-bottinitem span {
+  color: var(--colornews);
+  font-family: var(--font-h2);
+}
+.lsar_text {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--colorfont);
+}
+.lsar_block {
+  background: var(--color03);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-left: 1px solid var(--bordercolor);
+  font-size: 12px;
+  color: var(--colorfont);
+}
+.lsar_block_title {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  color: var(--colornews);
+}
+.lsar_block.highlight {
+  border-left: 2px solid var(--colornews);
+  background: linear-gradient(to right, rgba(186, 171, 123, 0.08), transparent);
+}
+.ls-cre_intro {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--bordercolor);
+  padding-bottom: 10px;
+  color: var(--colorfont);
+}
+.ls-cre_sec {
+  margin-bottom: 15px;
+}
+.ls-cre_cattle {
+  font-family: var(--font-h4);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--coloradd);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.ls-cre_list {
+  padding-left: 5px;
+}
+.ls-cre_item {
+  font-size: 12px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--colorfont);
+}
+.ls-cre_item:last-child {
+  border-bottom: none;
+}
+.ls-cre_item span {
+  color: var(--colornews);
+  opacity: 0.8;
+}
+.ls-crefoo {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  color: var(--colorfont);
+}
+.ls-crefoo span {
+  color: var(--colornews);
+}  
+.lsstaff_text {
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: justify;
+  color: var(--colorfont);
+}
+.lsstaff_line {
+  margin: 18px 0 12px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--colornews),
+    transparent
+  );
+  opacity: 0.5;
+}
+.lsstaff_footer {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--colorfont);
+}
+.lsstaff_footer span {
+  color: var(--colornews);
+}
+.ls-maintab {
+  margin-top: 10px;
+}
+.lstab.main {
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  background: var(--color03);
+  border: 1px solid var(--bordercolor);
+  cursor: pointer;
+}
+.lstab.main.active {
+  border: 1px solid var(--colornews);
+  color: var(--colornews);
+}
+.ls-tabs_row {
+  margin-top: 8px;
+}
+.ls-tabs_row .lstab {
+  display: inline-block;
+  padding: 5px 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+.ls-tabs_row .lstab:hover {
+  opacity: 1;
+  color: var(--coloradd);
+}
+.ls-tabs_row .lstab.active {
+  opacity: 1;
+  color: var(--colornews);
+  border-bottom: 1px solid var(--colornews);
+}
+.lstab_blockgen {
+  padding: 15px 15px 0 15px;
+}
+.ls-tab_content {
+  background: var(--color03);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 1px solid var(--bordercolor);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ls-tabTLE {
+  font-family: var(--font-h4);
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  color: var(--colornews);
+  text-transform: uppercase;
+}
+.ls-tab_subblock {
+  margin-top: 8px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+}
+.ls-tab_subTLE {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--coloradd);
+  display: block;
+  margin-bottom: 3px;
+}
+.ls-tab {
+  display: none;
+}
+.ls-tab.active {
+  display: block;
+}
+.ls-tab img {
+  width: 600px;
+}
+.ls-intrigue {
+  font-size: 13px;
+  text-align: justify;
+  line-height: 1.6;
+  color: var(--colorfont);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--bordercolor);
+}
+.ls-blockintr {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 1px solid var(--bordercolor);
+}
+.ls-blocksubtle {
+  font-family: var(--font-h4);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: var(--coloradd);
+}
+.highlight_block {
+  background: linear-gradient(to right, var(--color03), transparent);
+  padding: 10px;
+  border-left: 2px solid var(--colornews);
+}
+.ls-blockintr p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--colorfont);
+}
+
+.ls-cont_img {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.ls-cont_img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--coloradd);
+}
+.ls-context .ls-cont_text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--colorfont);
+  text-align: justify;
+}
+.ls-context .ls-cont_text p:first-of-type::first-letter {
+  font-size: 40px;
+  font-family: var(--font-h1);
+  float: left;
+  margin-right: 6px;
+  line-height: 1;
+  color: var(--coloradd);
+}
+.ls-cont_end {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--colorfont);
+}
+.ls-cont_end span {
+  color: var(--colornews);
+} 
+.ls-blocksec_tle {
+  font: 20px var(--font-h4);
+  letter-spacing: 1px;
+  margin: 0 0 15px 7px;
+  color: var(--colorfont);
+  display: flex;
+  gap: 8px;
+}
+.ls-blocksec_tle span {
+  color: var(--coloradd);
+}
+.ls-blocksec_text {
+  position: relative;
+  padding-left: 20px;
+}
+.ls-blocksec_text::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--bordercolor);
+}
+.ls-blocksec_rule {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.ls-blocksec_rule::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background: var(--colornews);
+  border-radius: 50%;
+}
+.ls-blocksec_indlet {
+  width: 28px;
+  font-size: 12px;
+  color: var(--colorfont);
+}
+.ls-blocksec_rulecont {
+  flex: 1;
+}
+.ls-blocksec_rulecont p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--colorfont);
+}
+.ls-blocksec_sectle {
+  font-family: var(--font-h3);
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: var(--colorfont);
+}
+.highlight {
+  margin-top: 5px;
+  padding: 6px 8px;
+  background: var(--color03);
+  border-left: 2px solid var(--coloradd);
+  font-size: 12px;
+  color: var(--colorfont);
+  border-radius: 2px;
+}
+.lst_fpbg {
+  color: #ccc;
+  width: 650px;
+  margin: auto;
+  font-family: var(--font-text);
+  background: var(--bgcolor);
+  padding: 12px;
+  border-radius: var(--mainradius);
+}
+.lst_fpin {
+  padding: 20px;
+  border-radius: var(--mainradius);
+  background: rgba(20, 20, 20, 0.85);
+  position: relative;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+.lst_fpin::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: var(--mainradius);
+  background: var(--gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+.lst_fphead {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lst_fpname {
+  position: relative;
+  display: inline-block;
+  font: 36px var(--font-h2);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 10px 0 20px auto;
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.15),
+    rgb(255 255 255 / 0.02)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  box-shadow: 
+    0 10px 30px rgb(0 0 0 / 0.6),
+    inset 0 1px 0 rgb(255 255 255 / 0.05);
+  text-align: center;
+}
+.lst_fpname span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+.lst_fpnamequo {
+  opacity: 0.7;
+  letter-spacing: 2px;
+  font: 12px var(--font-h4);
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid var(--colornews);
+}
+.lst_fptabs {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0 35px 0;
+  text-align: center;
+}
+.lst_fptabind {
+  position: relative;
+  padding-left: 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaa;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+.lst_fptabind span {
+  display: inline-block;
+  transition: 0.3s;
+}
+.lst_fptabind:hover span {
+  background: linear-gradient(
+    to right,
+    var(--colornews),
+    var(--coloradd)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lst_fptabind::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 24px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--colornews),
+    var(--coloradd)
+  );
+  transition: width 0.3s ease;
+}
+.lst_fptabind:hover::after {
+  width: calc(100% - 24px);
+}
+.lst_fptabind::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: #888;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: 0.3s;
+}
+.lst_fptabind:hover::before {
+  background-color: var(--colornews);
+  transform: translateY(-50%) scale(1.1) rotate(6deg);
+}
+.lst_fptabind.active {
+  opacity: 1;
+}
+.lst_fptabind.active span {
+  background: linear-gradient(
+    to right,
+    var(--colornews),
+    var(--coloradd)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lst_fptabind.active::after {
+  width: calc(100% - 24px);
+}
+.lst_fptabind.active::before {
+  background-color: var(--colornews);
+}
+.lst_fptabind[data-tab="1"]::before {
+  mask-image: url("https://unpkg.com/lucide-static/icons/info.svg");
+}
+.lst_fptabind[data-tab="2"]::before {
+  mask-image: url("https://unpkg.com/lucide-static/icons/brain.svg");
+}
+.lst_fptabind[data-tab="3"]::before {
+  mask-image: url("https://unpkg.com/lucide-static/icons/zap.svg");
+}
+.lst_fptabind[data-tab="4"]::before {
+  mask-image: url("https://unpkg.com/lucide-static/icons/book-open.svg");
+}
+.lst_fpcontain {
+  position: relative;
+  min-height: 500px;
+}
+.lst_fpcontent {
+  opacity: 0;
+  transform: translateY(15px);
+  pointer-events: none;
+  transition: 0.4s ease;
+  position: absolute;
+  width: 100%;
+}
+.lst_fpcontent.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+.lst_fptabinfos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.lst_fpimginfos {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin: 30px 0;
+}
+.lst_fpimginfos img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--bordercolor);
+  outline: 1px var(--coloradd) solid;
+  outline-offset: 5px;
+  transition: 0.3s;
+}
+.lst_fpimginfos img:hover {
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.lst_fptlegen {
+  margin: 135px 0 !important;
+}
+.lst_fptlegen::after {
+  background: transparent !important;
+}
+.lst_fptlegen,
+.lst_fpplayertle,
+.lst_fptabottle {
+  position: absolute;
+  width: 100%;
+  margin: 90px 0;
+  text-align: center;
+  font: 22px var(--font-h2);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--colornews);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.lst_fptabottle {
+  margin: -65px 0;
+}
+.lst_fptlegen::before,
+.lst_fptlegen::after,
+.lst_fpplayertle::before,
+.lst_fpplayertle::after,
+.lst_fptabottle::before,
+.lst_fptabottle::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--colornews),
+    transparent
+  );
+  opacity: 0.5;
+}
+.lst_fpblockinfos {
+  flex: 1;
+  background: var(--color03);
+  padding: 15px;
+  max-height: 370px;
+  overflow-y: auto;
+  margin-top: 30px;
+}
+.lst_fpinfoslist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lst_fbinfo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.lst_fbinfo span {
+  font: 15px var(--font-h4);
+  color: var(--coloradd);
+}
+.lst_fbinfo > p {
+  font: 12px var(--font-text);
+}
+.lst_fpavaquo {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lst_fpava {
+  width: 200px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--mainradius);
+  margin: 10px 0;
+  outline: 1px solid var(--bordercolor);
+  outline-offset: 8px;
+  transition: 0.4s;
+}
+.lst_fpquo {
+  font: 14px var(--font-h4);
+  width: 200px;
+  overflow: hidden;
+  margin: 13px 0;
+  border-left: 2px var(--coloradd) solid;
+  text-align: justify;
+  padding-left: 10px;
+}
+.lst_fpbtsimg {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.lst_fpbtsimg img {
+  width: 100%;
+  height: 100%;
+}
+.lst_fpplayertle {
+  position: relative !important;
+  font: 20px var(--font-h3);
+  margin: 0 !important;
+  width: 100%;
+  padding-top: 10px;
+}
+.lst_fpblockplayer {
+  margin-top: 10px;
+  height: 70px;
+  overflow: auto;
+}
+.lst_fpinfoplayer {
+  display: flex;
+  flex-wrap: wrap;
+  font: 12px var(--font-text);
+  line-height: 18px;
+}
+.lst_fpinfoplayer > div {
+  font: 15px var(--font-h4);
+  color: var(--coloradd);
+  padding-right: 5px;
+}
+.lst_fpimgtab {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 90px auto -60px auto;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  outline: 1px solid var(--coloradd);
+  outline-offset: 6px;
+  box-shadow: 
+    0 5px 20px rgb(0 0 0 / 0.6),
+    0 0 15px rgb(255 255 255 / 0.05);
+  transition: all 0.3s ease;
+}
+.lst_fpimgtab:hover {
+  transform: scale(1.08);
+  outline-offset: 8px;
+  box-shadow: 
+    0 10px 30px rgb(0 0 0 / 0.8),
+    0 0 20px var(--coloradd);
+}
+.lst_fpblocktab,
+.lst_fpblockplayer {
+  background: var(--color03);
+  padding: 15px;
+  overflow: auto;
+  font: 12px var(--font-text);
+  text-align: justify;
+  max-height: 600px;
+  margin-top: 10px;
+  border-left: 2px solid var(--bordercolor);
+  transition: 0.3s;
+}
+.lst_fpblocktab {
+  margin: 100px 0 0 0 !important;
+  text-align: center;
+}
+.lst_fpblocktab > p {
+  text-align: justify;
+  padding: 10px;
+}
+.lst_fpgroup {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 15px;
+  opacity: 0.6;
+}
+.lst_fpgroup span {
+  color: var(--colornews);
+}
+
+/* ===================================== FIN ENSEMBLE DES FICHES ===================================== */
+
+
+/* ======================================================
+   Couche d'isolation pour affichage en page hébergée/iframe
+   ====================================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #0F0F0F;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 22px 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--colornews);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--coloradd);
+}
+
+.lst_fpbg {
+  max-width: 650px;
+}
+
+.lst_fpcontent {
+  display: none;
+}
+
+.lst_fpcontent.active {
+  display: block;
+}
+
+.lst_fptabind {
+  user-select: none;
+}
+
+.lst_fptabind:focus {
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 12px 0;
+  }
+
+  .lst_fpbg {
+    width: calc(100% - 20px);
+  }
+
+  .lst_fptabs {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="lst_fpbg"><div class="lst_fpin"><div class="lst_fphead"><div class="lst_fpname"><span><!-- NOM DU FORUM -->Lithium Souls [18+]</span></div><div class="lst_fpnamequo"><!-- PETITE PHRASE D'ACCROCHE -->Publicité et partenariat</div></div><div class="lst_fptabs"><span class="lst_fptabind active" data-tab="1"><span>Infos générales</span></span><span class="lst_fptabind" data-tab="2"><span>Contexte</span></span><span class="lst_fptabind" data-tab="3"><span>Liens utiles</span></span><span class="lst_fptabind" data-tab="4"><span>Particularité</span></span></div><div class="lst_fpcontain"><div class="lst_fpcontent active" data-content="1"><div class="lst_fptabinfos"><div class="lst_fpimginfos"><!-- IMAGES ESTHÉTIQUES --><img src="https://zupimages.net/up/26/18/x35s.jpg"><img src="https://zupimages.net/up/26/18/7jdf.jpg"><img src="https://zupimages.net/up/26/13/fmch.jpg"><img src="https://zupimages.net/up/26/18/5loc.jpg"></div><div class="lst_fptlegen">Synthèse</div><div class="lst_fpblockinfos"><div class="lst_fpinfoslist"><div class="lst_fbinfo"><span>Type</span><p><!-- THÈME -->Mature ; Fantastique dystopique </p></div><div class="lst_fbinfo"><span>Inspiration</span><p><!-- INSPIRATION DU RPG -->Idée originale inspirée du <em>Hellaverse</em> (Vivienne Medrano), <em>L’Enfer</em> de Dante,  les récits bibliques de l’<em>Ancien</em> et du <em>Nouveau Testaments</em>, ainsi que quelques autres œuvres gravitant autour de la démonologie, des pactes, de la mort, des relations entre le Monde des Vivants et l’Au-delà. Vous trouvez nos inspirations dans nos <a href="https://lithium-souls.forumactif.com/t51-credits" target="_blank" rel="noopener noreferrer">crédits</a>.
+</p></div><div class="lst_fbinfo"><span>Majorité</span><p><!--AGE -->Interdit aux moins de 18 ans.</p></div><div class="lst_fbinfo"><span>Fréquence RP</span><p><!-- FREQUENCE-->Une (1) publication par mois par personnage demandée.</p></div><div class="lst_fbinfo"><span>Mots par publlication</span><p><!-- MIN / MAX -->Aucun minimum de mots requis par publication.</p></div><div class="lst_fbinfo"><span>Univers</span><p><!-- OBJECTIF -->Évolutif de façon autonome qui ne cherche pas à reproduire avec exactitude le <em>Hellaverse</em>, mais à étudier l'Enfer et ses systèmes politiques, sociaux et relationnels. </p></div><div class="lst_fbinfo"><span>Droit à la déconnexion</span><p><!-- COMMUNICATION -->Pas de Discord, nous n'avons qu'une ChatBox (<em>Back to the Future style</em>).</p></div><div class="lst_fbinfo"><span>Multicompte </span><p><!-- COMPTES -->Trois comptes maximum, dont deux qui peuvent être issus du <em>Hellaverse</em>.</p></div><div class="lst_fbinfo"><span>Approche</span><p><!-- ORIENTATION --> Favoriser l’approche : jouer pour jouer et pas « les joueurs attirent les joueurs ».</p></div></div></div><div class="lst_fpavaquo"><img class="lst_fpava" src="https://zupimages.net/up/26/18/g1ft.jpg"><div class="lst_fpquo"><!-- CITATION -->" La plus belle des ruses du diable est de vous persuader qu'il n'existe pas. " </div></div></div><div class="lst_fpbtsimg"><img src="https://zupimages.net/up/26/13/33xj.png"></div><div class="lst_fpplayertle">Avertissement</div><div class="lst_fpblockplayer"><div class="lst_fpinfoplayer"><div>Lithium Souls est un RPG mature</div><!-- DESCRIPTION--> Il s'agit d'un univers pouvant relater des contextes d’abus, de dépendances, de violences (physique, psychologique, émotionnelle, identitaire, sexuelle, sociale, systémique), d’inégalités, d’érotisme, de sexualité, de climats politiques instables, de génocides, de discours discriminants et de situations pouvant ne pas convenir à certain·e·s lecteurs·trices. <strong>Vous êtes un public averti </strong>!</div></div></div><div class="lst_fpcontent" data-content="2"><div class="lst_fptabottle">Contexte</div><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/h1t1.png"><div class="lst_fpblocktab"><!-- CONTEXTE --><div class="ls-header"><div>Intrigue première</div><span><strong>«</strong> La création d’un monde unique provient d’un grand nombre de <em>fragments </em>et de <em>chaos</em>. <strong>»</strong> — H. Miyazaki </span>
+<div class="ls-cont_img"><img src="https://zupimages.net/up/26/14/qpu6.png" alt="avatar 1"><img src="https://zupimages.net/up/26/14/u6ia.png"></div></div>
+<div class="ls-cont_text"><div class="ls-tab_content"><div class="ls-tabTLE">L'<em>Enfer tremble</em>.</div>
+Les terres de <span style="font-family:Georgia;"><span style="color:#bf6412;"><em><strong>C</strong>olère</em></span></span> semble sous l’acouphène d’un diapason constant à travers ses plaines de sables ; un augure que nul n’ose prononcer.
+<span style="font-family:Georgia;"><span style="color:#7496b4;"><em><strong>L</strong>uxure</em></span></span> a ces pas plus rapides, celui qu'ont les gens d’<span style="font-family:Georgia;"> <span style="color:#74846d;"><em><strong>A</strong>varice</em></span></span> lorsqu’ils rentrent le soir.
+La nourriture roule sur les langues à <span style="color:#c99c43;"><span style="font-family:Georgia;"><em><strong>G</strong>ourmandise</em></span></span>, la brûlure de la bile remontant dans les trachées et même<span style="font-family:Georgia;"> <span style="color:#86789a;"><em><strong>E</strong>nvie</em></span></span> voit ses eaux se troubler.
+<span style="font-family:Georgia;"><span style="color:#cc677a;"><em><strong>P</strong>aresse</em></span></span> n’a jamais autant eu l’air de sa soeur contraire et <span style="font-family:Georgia;"> <span style="color:#b7503c;"><em><strong>O</strong>rgueil</em></span></span>, elle, <em><span style="font-family:Georgia;"><span style="color:#b7503c;"><strong>Orgueil</strong></span></span></em> vibre.
+
+<div class="highlight">
+<div style="text-align:center;"><em>250 ans </em>après les premières <em>Exterminations</em> ; <em>7 ans</em> depuis l’<em>évaporation</em> de <strong>L</strong>ilith.</div>
+<div style="text-align:center;"><span style="font-family:Courier New;"><strong>« Le <strong>R</strong>oi a disparu. »</strong> </span></div>
+</div>
+
+Le titre était affiché sur toutes les télévisions analogues vrillant dans la vitrine de <em>Hell-G</em>.
+
+Dans les tribunes de <em>Pentagram City</em>, on entendait la rumeur se propager.
+« <span style="color:#a89592;">Qui ?</span> », la voix était lointaine.
+« <span style="color:#a89592;">Le <em>Roi</em> !</span> », l’exclamation stridente.
+« <span style="color:#a89592;"><em>Lucifer</em> a disparu !</span> », scander à répétition à travers les rues et ruelles, réverbérant sur les immeubles de béton et de verre jusqu’au travers des ruines encore fraîches de la dernière tragédie qui s’était abattue sur eux.
+
+Pendant que les Damné·e·s ouvraient leur téléphone portable pour vérifier la véracité de ces propos, le son d’un glas d’une horloge sonnait midi.
+<em>12 heures</em> après la destitution de Vox.
+<em>12 heures</em> après la presque fin du <strong>M</strong>onde qu’ils avaient <em>frôlée</em>.
+
+<div class="highlight"><span style="font-family:Georgia;"> </span>
+<div style="text-align:center;">L e   <strong>R </strong>o i   s ’ é t a i t    <u>v o l a t i l i s é</u></div>
+</div>
+
+Et dans les multitudes d'écrans qui leur renvoyaient les yeux hagards de Charlie Morningstar venant de corroborer les faits à <em><span style="color:#8a4448;">666 News</span></em>, un climat de terreur et d’exaltation s’installait.
+
+Et avec <em>lui</em>, <span style="color:#a89592;">plus aucune certitude.</span>
+Si ce n’était que sans le Roi et sans la Reine, il n’y avait plus aucune raison de rester scellé à un destin de sujétion.
+
+
+<!-- DÉBUT BLOC EXPLICATIF --><div class="ls-blockintr"><div class="ls-blocksubtle">Intrigue première</div>
+<p>Dans quel camp serez-vous lorsque le <em>verdict</em> <u>tombera</u> ?
+
+Serez-vous de celleux qui aspireront à conserver le <em><span style="color:#a89592;">statu quo</span></em> ?
+De celleux tombant en proie à des <span style="color:#a89592;">ambitions soudaines</span> ?
+De celleux voyant cette disparition comme l’opportunité de <span style="color:#a89592;">renverser l’ordre établi</span> ?
+<span style="color:#a89592;">D'annihiler tout ce qui reste de pouvoirs</span> autour de vous?
+Ou peut-être vous ferez-vous <span style="color:#a89592;">baron du crime ou maître de guerre</span> ; sévissant comme personne auparavant? </p></div><!-- FIN BLOC EXPLICATIF -->
+
+
+<!-- DÉBUT BLOC EXPLICATIF "HIGHLIGHT"--><div class="ls-blockintr highlight_block"><div class="ls-blocksubtle"> :warning: Enjeux</div><p>Votre implication ou non implication à l'intrigue vous appartient complètement.
+Vous pouvez y prendre part de façon complète, modérée ou en éluder ses moindres effets compte tenu de la position sociale de votre personnage ou de vos préférences.
+
+En cas d'événements majeurs ou de <span style="color:#a89592;">décisions impactantes</span>, nous vous demandons de <span style="color:#ac9e72;"> contacter l'Équipe administrative</span> afin que nous puissions intégrer ces éléments dans les suites narratives.</p></div><!-- FIN BLOC EXPLICATIF "HIGHLIGHT"-->
+
+</div><div class="ls-cont_end"><span>✦</span> Que reste-t-il de l’Enfer si la suprématie Morningstar disparaît ?</div></div></div></div></div><div class="lst_fpcontent" data-content="3"><div class="lst_fptabottle">Liens utiles</div><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/3872.png"><div class="lst_fpblocktab"><!-- LIENS RPG --><div class="lst_fpblockinfos"><div class="lst_fpinfoslist"><div class="lst_fbinfo"><span>Notre règlement</span><p><!-- LIEN REG --> <a href="https://lithium-souls.forumactif.com/t44-reglement" target="_blank" rel="noopener noreferrer">https://lithium-souls.forumactif.com/t44-reglement</a>
+</p></div><div class="lst_fbinfo"><span>Nos Annexes</span><p><!-- ANNEXES-->(8 en ligne, 2 à venir ) : <a href="https://lithium-souls.forumactif.com/f33-annexes" target="_blank" rel="noopener noreferrer">https://lithium-souls.forumactif.com/f33-annexes</a></p></div><div class="lst_fbinfo"><span>Les Scénarios</span><p><!-- SCENA INFO --> 7 dont 6 de disponibles ; d'autres viendront dans les prochaines semaines : <a href="https://lithium-souls.forumactif.com/f23-scenarios" target="_blank" rel="noopener noreferrer">https://lithium-souls.forumactif.com/f23-scenarios</a></p></div><div class="lst_fbinfo"><span>Prédéfinis</span><p><!-- PREDEF -->Les prédéfinis mis de l'avant, soit Moxxie et ses drôles de dames : <a href="https://lithium-souls.forumactif.com/f22-predefinis" target="_blank" rel="noopener noreferrer">https://lithium-souls.forumactif.com/f22-predefinis</a> </p></div><div class="lst_fbinfo"><span>Personnages Hellaverse jouables</span><p><!-- PERSO CANON -->Liste non exhaustive : <a href="https://lithium-souls.forumactif.com/t24-personnages-hellaverse-jouables" target="_blank" rel="noopener noreferrer">https://lithium-souls.forumactif.com/t24-personnages-hellaverse-jouables</a></p></div><div class="lst_fbinfo"><span>Ressources d'images du RPG </span><p><!-- FC PERSO -->Pinterest dédié pour vous choisir ou vous inspirer un personnage : <a href="https://pin.it/29LAcQoPf" target="_blank" rel="noopener noreferrer">https://pin.it/29LAcQoPf</a></p></div></div></div></div></div><div class="lst_fpcontent" data-content="4"><div class="lst_fptabottle">Particularité</div><img class="lst_fpimgtab" src="https://zupimages.net/up/26/16/xeiy.png"><div class="lst_fpblocktab"><p><!-- FAITS VRAC-->Nous sommes sur un RPG <span style="color:#a89792;">évolutif et inclusif</span>, ce qui veut dire que vous êtes libre de vos choix : que vous vous impliquiez directement dans l’intrigue principale pour la faire avancer à autant de valeur que si vous souhaitez ne jouer que vos relations et vous concentrer sur une exploration de votre personnage indépendamment des grands arcs narratifs.
+
+Tout est valide tant et aussi longtemps que le contexte est respecté! Nous vous encourageons à vous épanouir à travers votre plume avec le moins de balises possible.
+
+<span style="color:#a89792;">Prenez des risques et tentez des concepts</span>, c’est la meilleure façon de s’amuser!
+
+Si jamais vous souhaitez que nous <span style="color:#a89792;">ajoutions des informations</span> parce que vous aimeriez explorer des retranchements plus obscurs de l’univers, n’hésitez pas à nous en faire mention afin que nous puissions remédier à la situation et approfondir <span style="color:#ac9e72;"><span style="font-family:Georgia;">LS</span></span>.
+
+Si notre contexte s’inspire librement du <span style="color:#8a4448;"><em>Hellaverse</em></span> en comptant les 2 saisons des 2 séries (<em>Hazbin Hotel </em>et <em>Helluva Boss</em>), nos annexes sauront vous guider si jamais vous n’avez pas vu un épisode ou si vous n’êtes pas familiers de l’univers : <span style="color:#a89792;">nous souhaitons avancer de façon autonome et nous concentrer davantage sur la vie en Enfer plutôt que sur les intrigues des personnages des séries</span>, même si iels sont jouables!
+
+Les personnages <span style="color:#8a4448;"><em>Hellaverse</em></span> ET <span style="color:#a89792;">originaux</span> seront traités de façon équitable.
+
+</p></div></div></div><div class="lst_fpgroup"><span>★</span><!-- Crédits -->code par selwyn. ; contexte par Cath et Loon </div></div></div>
+
+
+<script>
+(function () {
+  function initTabs(scope) {
+    const tabs = scope.querySelectorAll('.lst_fptabind[data-tab]');
+    const contents = scope.querySelectorAll('.lst_fpcontent[data-content]');
+
+    tabs.forEach(function(tab) {
+      tab.setAttribute('tabindex', '0');
+      tab.setAttribute('role', 'button');
+
+      function activate() {
+        const target = tab.getAttribute('data-tab');
+
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+        });
+
+        contents.forEach(function(c) {
+          c.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+
+        const content = scope.querySelector('.lst_fpcontent[data-content="' + target + '"]');
+        if (content) {
+          content.classList.add('active');
+        }
+      }
+
+      tab.addEventListener('click', activate);
+      tab.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.lst_fpbg').forEach(initTabs);
+  });
+})();
+</script>
+
+</body>
+</html>
