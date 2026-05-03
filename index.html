@@ -471,7 +471,13 @@ a:hover { color: var(--coloradd); }
 
 .lst_fpgroup span { color: var(--colornews); }
 
-@media (max-width: 700px) {
+.lst_fpcontent[data-content="4"] .ls-tab_content {
+  text-align: justify;
+  line-height: 1.7;
+}
+
+
+@media (max-width: 520px) {
   .lst_fptabs { gap: 14px; }
   .ls-header > div { font-size: 32px; }
 
